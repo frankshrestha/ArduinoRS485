@@ -19,8 +19,12 @@
 #define RS485_DEFAULT_DE_PIN A4
 #define RS485_DEFAULT_RE_PIN A5
 #elif defined(ESP32) || defined(ESP8266)
+#ifndef RS485_DEFAULT_DE_PIN
 #define RS485_DEFAULT_DE_PIN 0
+#endif
+#ifndef RS485_DEFAULT_RE_PIN
 #define RS485_DEFAULT_RE_PIN 0
+#endif
 #else
 #ifndef RS485_DEFAULT_DE_PIN
 #define RS485_DEFAULT_DE_PIN A6
@@ -35,7 +39,6 @@
 #else
 #define RS485_SER_CONF_TYPE uint16_t
 #endif
-
 
 #define RS485_DEFAULT_PRE_DELAY 50
 #define RS485_DEFAULT_POST_DELAY 50
